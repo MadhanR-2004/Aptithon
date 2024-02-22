@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Data</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Mulish", sans-serif;
+    font-size: 14px;  
+    background: #c8d3d6;
+  }
+  :root {
+    --color-1: #f68121;
+    --color-2: #ed1c24;
+    --color-3: #582c8b;
+    --color-4: #0166b4;
+  }
+  .page-wrapper {
+    padding: 50px 0;
+  }
+  .infographic-cards {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap; /* Ensures cards wrap to new lines */
+    gap: 2%;
+    justify-content: center;
+    padding-left: 0;
+    list-style: none; /* Remove default list styles */
+  }
+  .infographic-cards li {
+    width: calc(25% - 20px); /* Adjust card width to fit 4 cards per row */
+    height: auto;
+    padding: 25px 30px;
+    background: #eee;
+    position: relative;
+    background-image: linear-gradient(to bottom right, #e9eaecda, #ffffff);
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.25));
+    box-shadow: inset 2px 2px 2px white, inset -1px -1px 1px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .infographic-cards li h5 {
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--color-1); /* Change text color */
+  }
+  .infographic-cards li h6 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+  .infographic-cards li i {
+    font-size: 35px;
+    margin-bottom: 15px;
+  }
+  .number-box {
+    position: absolute;
+    top: 10px; /* Adjust position */
+    right: 10px; /* Adjust position */
+    padding: 10px; /* Adjust padding */
+    font-size: 18px; /* Adjust font size */
+    border-radius: 50%;
+    width: 30px; /* Adjust width */
+    height: 30px; /* Adjust height */
+    background-color: var(--color-1); /* Change background color */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  table {
+    width: 100%;
+    margin-top: 15px;
+  }
+  table td {
+    padding: 5px;
+    text-align: center;
+  }
+  .search-box{
+    margin: 0px;
+    margin-right: 93px;
+    margin-left: 93px;
+    width: calc(100% - 200px);
+    border: 2px solid var(--color-1);
+    border-radius: 20px;
+    line-height: 40px;
+  }
+  @media screen and (max-width: 768px) {
+    .infographic-cards li {
+      width: calc(100% - 20px); /* Adjust card width to fit 1 card per row */
+    }
+    .search-box{
+      margin: 0px;
+    margin-right: 30px;
+    margin-left: 30px;
+    width: calc(100% - 60px);
+    }
+  }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#search-input').on('keyup', function() {
+      var searchText = $(this).val().toLowerCase();
+      $('.infographic-cards li').each(function() {
+        var textToSearch = $(this).text().toLowerCase();
+        if (textToSearch.indexOf(searchText) === -1) {
+          $(this).hide();
+        } else {
+          $(this).show();
+        }
+      });
+    });
+  });
+</script>
+
+
+</head>
+<body>
+<h1>Team Data</h1>
+<div class="page-wrapper">
+  <div class="container">
+    <input class="search-box" type="text" id="search-input" placeholder="Search...">
+    <ul class="infographic-cards">
+      {% for team in teams %}
+      <li class="color-{{ loop.index % 4 + 1 }}">
+        <div class="number-box">{{ loop.index }}</div>
+        <!-- <h5>{{ team[0][1] }}</h5>  -->
+        <table>
+          {% for row in team %}
+          <tr>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[3] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </li>
+      {% if loop.index % 3 == 0 and not loop.last %}
+        </ul><ul class="infographic-cards">
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
+</div>
+</body>
+</html>

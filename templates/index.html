@@ -184,9 +184,13 @@
                     </div>
                 </div> <!-- row -->
                 <div class="justify-center row">
+                    <div class="pb-10 text-center section-title">
+                        <div class="m-auto line"></div>
+                        <h3 class="title" style="color: rgb(21,160,208);" >2023 Champions Unveiled! 🏆 <span> Who'll claim victory in 2024? Take a guess!</span></h3>
+                    </div> <!-- section title -->
                     <div class="w-full lg:w-2/3">
                         <div class="text-center header-hero-image wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-                            <img src="{{ url_for('static', filename='images/poster.jpeg') }}" alt="hero">
+                            <img src="{{ url_for('static', filename='images/winners-2023.jpg') }}" alt="hero">
                         </div> <!-- header hero image -->
                     </div>
                 </div> <!-- row -->
@@ -196,6 +200,66 @@
     </header>
     
     <!--====== HEADER PART ENDS ======-->
+
+   <section id="facts" class="pt-20 video-counter">
+    <div class="container">
+        <div class="row justify-center">
+            <div class="w-full lg:w-1/2 md:w-full"> <!-- For medium screens (iPad), set width to full -->
+                <div class="pl-0 mt-12 counter-wrapper lg:pl-16 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                    <div class="counter-content text-center">
+                        <div class="mb-8 section-title">
+                            <div class="line"></div>
+                            <h3 class="title">Discover the <span>Aptithon</span> Glory</h3>
+                        </div>
+                        <p class="text" style="font-size: 20px;">Test your limits, conquer your fears, and achieve greatness. Aptithon awaits!</p>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="flex items-center justify-center single-counter counter-color-1">
+                            <div class="text-center counter-items">
+                                <span class="text-2xl font-bold text-white"><span class="counter">12</span> </span>
+                                <p class="text-white">Departments</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center single-counter counter-color-2">
+                            <div class="text-center counter-items">
+                                <span class="text-2xl font-bold text-white"><span class="counter">131 </span></span>
+                                <p class="text-white">Teams</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-center single-counter counter-color-3">
+                            <div class="text-center counter-items">
+                                <span class="text-2xl font-bold text-white"><span class="counter">524</span></span>
+                                <p class="text-white">Participants</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="services-area pt-120">
+    <div class="container">
+        <div class="justify-center row">
+            <div class="w-full lg:w-2/3">
+                <div class="pb-10 text-center section-title">
+                    <div class="m-auto line"></div>
+                    <h3 class="title">Venues for Aptithon</h3>
+                </div> <!-- section title -->
+            </div>
+        </div> <!-- row -->
+        <div class="justify-center row">
+            <div class="w-full sm:w-3/3 lg:w-2/3">
+                
+                        <img  class="shape-1" src="{{ url_for('static', filename='images/venues.jpeg') }}" alt="shape">
+    
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
+
+
     
     <!--====== BRAMD PART START ======-->
     
@@ -209,7 +273,7 @@
                     <div class="items-center justify-center row lg:justify-between">
                         <div class="single-logo hover:opacity-100 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
                             <a href="{{ url_for('static', filename='pdf/Quants.pdf') }}" download="Quants.pdf">
-                                <img src="{{ url_for('static', filename='images/brand-1.png') }}" alt="brand">
+                                <img  src="{{ url_for('static', filename='images/brand-1.png') }}" alt="brand">
                             </a>
                         </div> <!-- single logo -->
                         <div class="single-logo hover:opacity-100 wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.2s">
@@ -400,54 +464,7 @@
     
     <!--====== VIDEO COUNTER PART START ======-->
     
-    <section id="facts" class="pt-20 video-counter">
-        <div class="container">
-            <div class="row">
-                <div class="w-full lg:w-1/2">
-                    <div class="relative pb-8 mt-12 video-content wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <img class="absolute bottom-0 left-0 -ml-8 dots" src="{{ url_for('static', filename='images/dots.svg') }}" alt="dots">
-                        <div class="relative mr-6 rounded-lg shadow-md video-wrapper">
-                            <div class="video-image">
-                                <img src="{{ url_for('static', filename='images/trophy.jpg') }}" alt="video">
-                            </div>
-                            
-                        </div> <!-- video wrapper -->
-                    </div> <!-- video content -->
-                </div>
-                <div class="w-full lg:w-1/2">
-                    <div class="pl-0 mt-12 counter-wrapper lg:pl-16 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-                        <div class="counter-content">
-                            <div class="mb-8 section-title">
-                                <div class="line"></div>
-                                <h3 class="title">Excited <span> about Prizes</span></h3>
-                            </div> <!-- section title -->
-                            <p class="text" style="font-size: 20px;">Test your limits, conquer your fears, and achieve greatness. Aptithon awaits!</p>
-                        </div> <!-- counter content -->
-                        <div class="row no-gutters">
-                            <div class="flex items-center justify-center single-counter counter-color-1">
-                                <div class="text-center counter-items">
-                                    <span class="text-2xl font-bold text-white"><span class="counter">12</span> </span>
-                                    <p class="text-white">Departments</p>
-                                </div>
-                            </div> <!-- single counter -->
-                            <div class="flex items-center justify-center single-counter counter-color-2">
-                                <div class="text-center counter-items">
-                                    <span class="text-2xl font-bold text-white"><span class="counter">100+</span></span>
-                                    <p class="text-white">Teams</p>
-                                </div>
-                            </div> <!-- single counter -->
-                            <div class="flex items-center justify-center single-counter counter-color-3">
-                                <div class="text-center counter-items">
-                                    <span class="text-2xl font-bold text-white"><span class="counter">5</span></span>
-                                    <p class="text-white">Winners</p>
-                                </div>
-                            </div> <!-- single counter -->
-                        </div> <!-- row -->
-                    </div> <!-- counter wrapper -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
+    
     
     <!--====== VIDEO COUNTER PART ENDS ======-->
     
@@ -494,6 +511,21 @@
                      </div>
                     
                   </logo-slider>
+
+                  <!-- <div class="wrapper">
+                    <img class="pics" src="{{ url_for('static', filename='images/image_11.JPG') }}" alt="">
+                    <img class="pics" src="{{ url_for('static', filename='images/image_31.JPG') }}" alt="">
+                    <img class="pics" src="{{ url_for('static', filename='images/image_15.JPG') }}" alt="">
+                    <img class="pics" src="{{ url_for('static', filename='images/image_8.JPG') }}" alt="">
+                    <img class="pics" src="{{ url_for('static', filename='images/image_9.JPG') }}" alt="">
+                    <img class="pics" src="{{ url_for('static', filename='images/image_10.JPG') }}" alt="">
+                    <img class="pics" src="{{ url_for('static', filename='images/image_12.JPG') }}" alt="">
+                    <img class="pics" src="{{ url_for('static', filename='images/image_13.JPG') }}" alt="">
+                    <img class="pics" src="{{ url_for('static', filename='images/image_14.JPG') }}" alt="">
+                    <img class="pics" src="{{ url_for('static', filename='images/image_15.JPG') }}" alt="">
+                </div> -->
+                
+                
 
             </div> <!-- row -->
         </div> <!-- container -->

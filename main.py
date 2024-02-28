@@ -23,15 +23,16 @@ def index():
 
 @app.route('/table')
 def table():
-    # Read the Excel file
-    df = pd.read_csv('ap.csv')
-    df1 = df.drop(['Name of Participant', 'Unnamed: 3'], axis=1)
+  
+    # # Group rows into teams
+    # 
+    df = pd.read_csv('Aptithon.csv')
+    df1 = df.drop(['Unnamed: 2', 'Unnamed: 3'], axis=1)
     df2 = df1.iloc[:, :5]
     columns = df2.columns.tolist()  # Get column names
-
-    # Group rows into teams
+    print(columns)
+    print(df2.head())
     teams = group_teams(df2)
-
     return render_template('table.html', teams=teams, columns=columns)
 
 if __name__ == '__main__':

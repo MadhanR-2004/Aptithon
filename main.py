@@ -16,7 +16,7 @@ def group_teams(df):
         teams.append(team)
     return teams    
 
-# Define routes
+# Define route
 @app.route('/')
 def index():
     return render_template('index.html')
